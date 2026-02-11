@@ -1,4 +1,4 @@
-import asyncio
+import os
 import json
 import random
 from aiohttp import ClientSession
@@ -31,7 +31,7 @@ results = {
 }
 
 # ————— Token del bot —————
-TOKEN = input("Introduce el TOKEN del bot de Telegram: ")
+TOKEN =os.getenv('TELEGRAM_TOKEN')
 
 # ————— Función de generación de tarjetas —————
 def generar_tarjeta(bin_base: str, mes: str, ano: str, cvv: str, cantidad: int):
